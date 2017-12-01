@@ -1,0 +1,16 @@
+#encoding: utf-8
+import os
+
+def main():
+	input_file = './input.txt'
+
+	with open(input_file, 'r') as f:
+		lines = [l.strip() for l in f]
+	
+	for l in lines:
+		n = len(l) / 2
+		print 2 * sum([int(l[i]) * (l[i] == l[n + i]) for i in range(n)])
+	
+
+if __name__ == '__main__':
+	main()
